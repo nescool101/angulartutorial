@@ -1,0 +1,29 @@
+
+/* Sections
+   ========================================================================== */
+
+/**
+ * Remove the margin in all browsers.
+ */
+
+.header {
+  font-size: 46px;
+  margin: 0;
+}
+.footer {
+  font-size: 10px;
+  margin: 0;
+}
+.content {
+  font-size: 14px;
+  margin: 0;
+}
+.navigation {
+  font-size: 12px;
+  margin: 0;
+}
+
+.sidebar {
+  font-size: 10px;
+  margin: 0;
+}
