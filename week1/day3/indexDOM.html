@@ -1,0 +1,51 @@
+<!-- Take this file and open it on a browser, then open the console
+    inside developer tools -->
+
+<!-- Now it's your turn to make some changes
+    - Add at least 2 DOM elements, via code, DOH---DONE
+    - Make a button, ask a quantity and add those elements
+    ****************************************************
+    ****               BONUS POINTS                 ****
+    ****  Keep it funny, make a list, do a drawing  ****
+    ****      show me you can dominate the DOM      ****
+    ****************************************************
+-->
+<!DOCTYPE html>
+<html>
+<body>
+
+<ul id="myList">
+  <li>Coffee</li>
+  <li>Tea</li>
+</ul>
+
+<p id="myP"> This text will change on click:</p>
+<p>Click the button add item.</p>
+
+
+<button onclick="myFunction()">Add items</button>
+
+<script>
+function myFunction() {
+            "use strict";
+  var node = document.createElement("LI");
+  var node2 = document.createElement("P");
+  var textnode = document.createTextNode("Creating new value on list when The user click");    
+  node.appendChild(textnode);
+  document.getElementById("myList").appendChild(node);
+//canvas
+var paragraph = document.getElementById("myP");
+var text = document.createTextNode(" Another dom OBJECT,");
+
+paragraph.appendChild(text);
+}
+
+//function myFunction2() {
+//  document.getElementById("myP").innerHTML = "time:", document.write(Date());
+//}
+
+</script>
+
+
+</body>
+</html>

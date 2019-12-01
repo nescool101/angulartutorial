@@ -1,0 +1,40 @@
+<!-- Take this file and open it on a browser, then open the console
+inside developer tools -->
+
+<!DOCTYPE html>
+<html>
+<body> EVENTS:
+
+    <h2 onclick="showCoords(event)">Click this heading to get the x (horizontal) and y (vertical) coordinates of the mouse pointer when it was clicked.</h2>
+
+    <p id="demo2" onclick="showCoords(event)">Click me to change my text color to white (magic).</p>
+
+<p><strong>Tip:</strong> Try to click different places in the heading.</p>
+
+<p id="demo"></p>
+
+<script>
+function showCoords(event) {
+  var x = event.clientX;
+  var y = event.clientY;
+  var coords = "X coords: " + x + ", Y coords: " + y;
+  document.getElementById("demo").innerHTML = coords;
+  document.getElementById("demo2").style.color = "white";
+}
+</script>
+
+
+
+</body>
+</html>
+
+
+<!-- Now it's your turn to make some changes
+    - Draw some buttons, make your way between the click events and let me know they are pressed
+    - What other events are you familiar with? Show it
+    ****************************************************
+    ****               BONUS POINTS                 ****
+    ****      keep me informed of the pointer's     ****DONE AND DONE 
+    ****      position, make it show on screen      ****
+    ****************************************************
+-->
