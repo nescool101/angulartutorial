@@ -1,0 +1,138 @@
+<!-- Take this file and open it on a browser, then open the console
+    inside developer tools -->
+<script>
+    var Animal = (function(type) {
+        this.type = type;
+    });
+    Animal.prototype.talk = function() {
+        console.log(`Hi, I'm an Animal, but also a ${this.type}`);
+    };
+    let rabbit = new Animal("Rabbit");
+    rabbit.talk();
+
+Rabbit.prototype.sayHi = function() {
+  alert( this.name );  console.log(`Hi, I'm an Animal, but also a ${this.name}`);
+}
+
+let rabbit = new Rabbit("Rabbit");
+
+rabbit.sayHi();                        // Rabbit
+Rabbit.prototype.sayHi();              // undefined
+Object.getPrototypeOf(rabbit).sayHi(); // undefined
+rabbit.__proto__.sayHi(); 
+
+
+class Animal {
+  constructor(name, color,race) {
+    this.name = name;
+    this.color = color;
+    this.race =race;
+  }
+}
+
+class Rabbit extends Animal {
+  constructor(name, color) {
+    super(name, color, "rabbit");
+  }
+  get name() {
+    return  "the animal name is", this.name ;
+  }
+  set name(name) {
+    this.name = name;
+  }
+}
+
+var rabbit = new Rabbit("gato","negro","michu");
+//////////////
+//The Super 'Class' Animal
+function Animal(name, color, race, age) {
+    this.name = name;
+    this.color=color;
+    this.race=race;
+    this.age = age;
+}
+//has a method -- introduce
+Animal.prototype.introduce = function() {
+    console.log("Hello I am an animal with name " + this.name + " with a color " + this.color + "with a race " + this.race + " and I am " + this.age + " years old");
+}
+
+//The subclass Rabbit - inherits the prototype from Animal
+function Rabbit(name,color,age) {
+    Person.call(this,name,color,age);
+    this.race = "CONEJINI";
+}
+
+function Cow(name,color,age) {
+    Person.call(this,name,color,age);
+    this.race = "VACA";
+}
+//getters and setters
+  get name() {
+    return  "the animal name is", this.name ;
+  }
+  set name(name) {
+    this.name = name;
+  }
+ get race() {
+    return  "the animal race is", this.race ;
+  }
+  set race(race) {
+    this.race = race;
+  }
+
+
+//proto
+Rabbit.prototype = Object.create(Animal.prototype);
+
+//Override
+Rabbit.prototype.introduce = function() {
+    console.log("Hello I am " + this.name + " and I am a " + this.race);
+}
+
+const animal = new Animal("Animal", "ave","blanco",25);
+const rabbit = new Rabbit("conejin", 24);
+const vaca= new Cow("vaquita", "blanquita", 10)
+animal.introduce();
+rabbit.introduce();
+vaca.introduce();
+
+
+</script>
+
+<!-- Now it's your turn to make some changes
+    - Refactor the previous code to use getters and settters -done
+    - Add at least 2 more properties -dine
+    - Add at least 2 more methods -done
+    - Create a new class that inherits from Animalv -done
+    - Override one of the methods you previously defined -done
+    ****************************************************
+    ****               BONUS POINTS                 ****
+    ****      MAKE A 2nd VERSION USING ES6 CLASSES  ****
+    ****                                            ****
+    ****************************************************
+-->
+
+//--------------------ES6 clases-----------------------------
+'use strict';
+
+class Animal {
+    speak() {
+        console.log("I'm An animal");
+    }
+}
+
+class Rabbit extends Animal {
+    speak() {
+        super.speak();
+
+        console.log("I'm a rabbit on ES6");
+    }
+}
+
+var animal = new Animal();
+animal.speak();
+// Output:
+// I'm A
+
+var conejin = new Rabbit();
+conejin.speak();
